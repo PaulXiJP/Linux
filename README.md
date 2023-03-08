@@ -40,7 +40,6 @@ paul_xjp@hotmail.com
 
 * 0.2
     * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
