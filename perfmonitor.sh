@@ -72,3 +72,4 @@ do
 
   # Wait for $interval seconds before capturing the next set of performance metrics
   sleep $interval
+done
