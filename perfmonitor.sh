@@ -36,7 +36,7 @@ fi
 interval="$1"
 
 # Define the output file name
-output_file="/var/log/performance_metrics.txt"
+output_file=/var/log/performance_metrics-"$(date "+%m%d%H%s")".txt
 
 # Check if iotop is installed
 if ! command -v iotop &> /dev/null
