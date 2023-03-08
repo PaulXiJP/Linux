@@ -2,7 +2,7 @@
 
 # Define usage instructions
 usage() {
-  echo "Usage: $0 [-h|--help] <time interval in seconds>, run the script using nohup background: nohup ./perf.sh 60 &"
+  echo "Usage: $0 [-h|--help] <time interval in seconds>, run the script using nohup background: nohup ./perfmonitor.sh 60 &"
   echo ""
   echo "Capture performance metrics using ps, top, iostat, and iotop commands and write the output to a file."
   echo ""
@@ -21,9 +21,10 @@ then
   exit 0
 fi
 
-# Check if an argument is passed
-if [ -z "$1" ]
-then
+# Check if an number argument is passed
+if [ "$1" -gt 0 ] 2>/dev/null;then
+  echo "Time interval:" "$1"
+else
   echo "Error: No time interval specified."
   echo ""
   usage
