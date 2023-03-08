@@ -12,6 +12,7 @@ usage() {
   echo "Arguments:"
   echo "  <time interval in seconds>  The time interval in seconds between capturing performance metrics."
   echo ""
+  echo "The default output file is /var/log/performance_metrics.txt, change it in the line contains output_file="
 }
 
 # Check if the help parameter is passed
