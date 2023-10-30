@@ -47,6 +47,12 @@ then
           sudo yum install iotop -y
   elif [ -f /etc/lsb-release ]; then
           apt-get install iotop -y
+  elif [ -f /etc/os-release ]; then
+          . /etc/os-release
+          if [[ "$ID" == "opensuse" || "$ID" == "sles" ]]; then
+            echo "Detected SUSE-based distribution."
+            zypper install iotop -y
+          fi
   else
       echo "Unsupported distribution,install iotop manually"
   fi
