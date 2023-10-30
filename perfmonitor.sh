@@ -51,7 +51,7 @@ then
           . /etc/os-release
           if [[ "$ID" == "opensuse" || "$ID" == "sles" ]]; then
             echo "Detected SUSE-based distribution."
-            zypper install iotop -y
+            zypper non-interactive install iotop
           fi
   else
       echo "Unsupported distribution,install iotop manually"
