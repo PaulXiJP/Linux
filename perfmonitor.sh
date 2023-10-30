@@ -41,8 +41,15 @@ output_file=/var/log/performance_metrics-"$(date "+%m%d%H%s")".txt
 # Check if iotop is installed
 if ! command -v iotop &> /dev/null
 then
-  echo "iotop is not installed. Installing it now using yum..."
-  sudo yum install -y iotop
+  echo "iotop is not installed. Installing it now..."
+  if [ -f /etc/redhat-release ]; then
+          echo "Detected Red Hat based distribution"
+          sudo yum install iotop -y
+  elif [ -f /etc/lsb-release ]; then
+          apt-get install iotop -y
+  else
+      echo "Unsupported distribution,install iotop manually"
+  fi
 fi
 
 # Capture performance metrics every $interval seconds and write to the output file
