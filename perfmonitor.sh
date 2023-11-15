@@ -65,7 +65,7 @@ do
   echo "System time: $(date)" >> $output_file
 
   echo "Running tasks:" >> $output_file
-  ps -eo stat,pid,user,%cpu,%mem,time,cmd | grep -e '^[R]' >> $output_file
+  ps -eo stat,pid,user,%cpu,%mem,time,cmd | grep -e '^[R|D]' >> $output_file
   echo "" >> $output_file
 
   # Capture CPU and memory usage using 'ps' command
